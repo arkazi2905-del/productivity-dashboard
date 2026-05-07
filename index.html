@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productivity Dashboard</title>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <div class="nav-left">
+      <a href="#todo">Tasks</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <h1>PRODUCTIVITY DASHBOARD</h1>
+
+    <div class="nav-right">
+      <button id="darkModeToggle">🌙</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div>
+      <h2>Stay Organized & Productive</h2>
+      <p>Manage your tasks efficiently with a modern dashboard.</p>
+    </div>
+
+    <div class="clock-box">
+      <h3 id="clock"></h3>
+      <p id="quote"></p>
+    </div>
+
+  </section>
+
+  <!-- MAIN GRID -->
+  <main class="dashboard">
+
+    <!-- TODO SECTION -->
+    <section class="todo-section" id="todo">
+
+      <h2>📝 Task Manager</h2>
+
+      <div class="input-section">
+
+        <input type="text" id="taskInput" placeholder="Enter task">
+
+
+        <input type="date" id="dueDate">
+
+        <select id="category">
+          <option value="Personal">Personal</option>
+          <option value="Study">Study</option>
+          <option value="Work">Work</option>
+        </select>
+
+        <button id="addBtn">Add</button>
+
+      </div>
+
+      <!-- FILTERS -->
+      <div class="filters">
+        <button onclick="filterTasks('all')">All</button>
+        <button onclick="filterTasks('completed')">Completed</button>
+        <button onclick="filterTasks('pending')">Pending</button>
+      </div>
+
+      <!-- TASK LIST -->
+      <ul id="taskList"></ul>
+
+      <p id="taskCount">Total Tasks: 0</p>
+
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="contact-section" id="contact">
+
+      <h2>📧 Contact Form</h2>
+
+      <form id="contactForm">
+
+        <input type="text" id="name" placeholder="Your Name">
+
+        <input type="email" id="email" placeholder="Your Email">
+
+        <textarea id="message" placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+
+      </form>
+
+      <p id="formMessage"></p>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Made using HTML, CSS & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+
+</body>
+</html>
